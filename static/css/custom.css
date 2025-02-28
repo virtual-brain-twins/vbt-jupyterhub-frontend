@@ -29,6 +29,26 @@ h1, h2, h3, h4, h5, h6 {
 	width: auto !important;
 }
 
+/* Login */
+#jsc-login-container {
+	max-height: 30vh;
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: auto;
+}
+
+#accounts-login-div {
+	max-width: 100%;
+	
+}
+
+.logo {
+	max-height: 40px;
+}
+
 #logout {
 	color: white !important;
 	border: 1px solid white;
