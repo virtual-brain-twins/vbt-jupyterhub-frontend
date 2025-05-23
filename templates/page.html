@@ -43,7 +43,6 @@
             href="{{ static_url('css/style.min.css') }}"
             type="text/css" />
 	  <link rel="stylesheet" type="text/css" href="{{ base_url }}static/css/custom.css">
-	  
     {% endblock stylesheet %}
     {% block favicon %}
       <link rel="icon" href="{{ static_url('favicon.ico') }}" type="image/x-icon">
@@ -112,7 +111,7 @@
           {% block logo %}
             <span id="jupyterhub-logo" class="navbar-brand">
               <a href="https://www.virtualbraintwin.eu/" target="_blank">
-                <img src='{{ base_url }}logo'
+                <img src='{{ base_url }}/static/images/logo_white.svg'
                      alt='VBT JupyterHub logo'
                      class='jpy-logo'
                      title='Virtual Brain Twin' />
@@ -223,7 +222,7 @@
 					</a>
 				</div>
 			</div>
-		
+
 	</footer>
     {% endblock footer %}
     {% call modal('Error', btn_label='OK') %}

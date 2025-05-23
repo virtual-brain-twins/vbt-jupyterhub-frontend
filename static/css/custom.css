@@ -1,7 +1,14 @@
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
 body {
     background-color: rgb(199, 216, 226) !important;
 	font-family: 'Arial Narrow', Arial, sans-serif !important;
-	padding-bottom: 60px; /* Prevent content from being hidden under footer */
+	padding-bottom: 60px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -30,14 +37,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Login */
+.login-content-wrapper {
+  min-height: 60vh;
+  width: 100%;
+  padding: 2rem 1rem;
+}
+
 #jsc-login-container {
-	max-height: 30vh;
-	display: flex;
-	flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin: auto;
+  max-width: 1100px;
+  width: 100%;
+  max-height: 30vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 0.75rem;
+}
 }
 
 #accounts-login-div {
@@ -58,23 +76,6 @@ h1, h2, h3, h4, h5, h6 {
     background-color: rgb(109,131,143) !important;
 }
 
-.auth-form-body {
-    background-color: rgb(109,131,143) !important;
-    padding: 30px;
-    border-radius: 10px;
-	border: 1px solid rgba(208, 71, 10);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    width: 100%;
-}
-
-.auth-form-body label {
-    color: white !important;
-}
-
-.auth-form-header {
-    background-color: rgb(208,71,10) !important;
-}
-
 #login_submit {
 	background-color: rgb(208,71,10) !important;
 	border: none;
@@ -88,46 +89,54 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 5px 15px;
 }
 
+.btn-vbt {
+  background-color: rgb(208, 71, 10);
+  color: white;
+  border: none;
+}
+.btn-vbt:hover {
+  background-color: rgb(153, 50, 7);
+  color: white;
+}
+
 .white-band {
-    width: 100%;
-    height: 200px;
-    background: rgba(255, 255, 255, 0.3);
-    position: absolute;
-    left: 0;
-    bottom: 100px;
-    z-index: -1; /* Push it behind other content */
-	display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 2rem 1rem;
+  margin: 2rem 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .white-band-content {
-    width: 90%; /* Adjust the content width */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: center;
 }
 
 .white-band-left {
-	color: white !important;
-	text-align: left;
-    font-weight: bold !important;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: white !important;
+  font-weight: bold !important;
 }
 
 .white-band-left p {
-	background: rgba(153,70,28);
-	max-width: max-content;
-    margin-bottom: 3px; /* Adds spacing between the text lines */
-	padding: 3px 5px;
-}
-
-.white-band-left p:last-child {
-    margin-bottom: 0;
+  background: rgba(153, 70, 28);
+  padding: 3px 5px;
+  margin: 0 0 5px 0;
 }
 
 .white-band-right img {
-    height: 200px;
-    width: auto;
+  height: auto;
+  max-height: 140px;
+  width: auto;
+  max-width: 100%;
 }
 
 .custom-footer {
