@@ -43,6 +43,13 @@
             href="{{ static_url('css/style.min.css') }}"
             type="text/css" />
 	  <link rel="stylesheet" type="text/css" href="{{ base_url }}static/css/custom.css">
+
+      <link rel="stylesheet" href='{{static_url("components/bootstrap-5.0/dist/css/bootstrap.min.css")}}' type="text/css" />
+      <link rel="stylesheet" href='{{static_url("components/font-awesome-4.7.0/css/font-awesome.min.css")}}' type="text/css" />
+      <link rel="stylesheet" href='{{static_url("css/base.css")}}' type="text/css" />
+      <link rel="stylesheet" href='{{static_url("css/header.css")}}' type="text/css" />
+      <link rel="stylesheet" href='{{static_url("css/footer.css")}}' type="text/css" />
+      <link rel="stylesheet" href='{{static_url("components/jquery-confirm/jquery-confirm.min.css")}}' />
     {% endblock stylesheet %}
     {% block favicon %}
       <link rel="icon" href="{{ static_url('favicon.ico') }}" type="image/x-icon">
@@ -105,6 +112,9 @@
         Please enable it to proceed.
       </div>
     </noscript>
+
+    <div class="d-flex flex-column h-100">
+
     {% block nav_bar %}
       <nav class="navbar navbar-expand-sm bg-body-tertiary mb-4">
         <div class="container-fluid">
@@ -203,13 +213,16 @@
         </div>
       </nav>
     {% endblock nav_bar %}
+
     {% block announcement %}
       {% if announcement %}
         <div class="container text-center announcement alert alert-warning">{{ announcement | safe }}</div>
       {% endif %}
     {% endblock announcement %}
+
     {% block main %}
     {% endblock main %}
+
     {% block footer %}
 	<footer class="custom-footer">
 			<div class="footer-content">
@@ -225,6 +238,7 @@
 
 	</footer>
     {% endblock footer %}
+    </div>
     {% call modal('Error', btn_label='OK') %}
       <div class="ajax-error alert-danger">The error</div>
     {% endcall %}
