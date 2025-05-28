@@ -37,6 +37,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Login */
+.list-group.list-with-bullets .list-group-item {
+  list-style-type: disc;
+  display: list-item;
+}
+
 .login-content-wrapper {
   min-height: 60vh;
   width: 100%;
@@ -89,14 +94,17 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 5px 15px;
 }
 
+#button-login-div a,
+#button-login-div a:hover {
+  text-decoration: none;
+}
+
 .btn-vbt {
   background-color: rgb(208, 71, 10);
-  color: white;
   border: none;
 }
 .btn-vbt:hover {
   background-color: rgb(153, 50, 7);
-  color: white;
 }
 
 .white-band {
