@@ -101,10 +101,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-vbt {
   background-color: rgb(208, 71, 10);
+  color: white;
   border: none;
 }
 .btn-vbt:hover {
   background-color: rgb(153, 50, 7);
+  color: white;
 }
 
 .white-band {
