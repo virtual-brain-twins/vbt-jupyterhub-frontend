@@ -60,20 +60,23 @@
       </div>
     </div>
   </div>
-    <!-- VBT White Banner -->
-  <div class="white-band">
-    <div class="white-band-content">
-      <div class="white-band-left">
-        <p>JUPYTER HUB</p>
-        <p>FOR</p>
-        <p>VIRTUAL BRAIN TWIN</p>
-      </div>
-      <div class="white-band-right">
-        <img src="{{ base_url }}static/images/logo_tagline.svg" alt="VBT Logo">
-      </div>
-    </div>
-  </div>
 {%- endblock -%}
+
+{% block footertop %}
+	<!-- VBT White Banner -->
+      <div id="footer-top" class="white-band">
+        <div class="white-band-content">
+          <div class="white-band-left">
+            <p>JUPYTER HUB</p>
+            <p>FOR</p>
+            <p>VIRTUAL BRAIN TWIN</p>
+          </div>
+          <div class="white-band-right">
+            <img src="{{ base_url }}static/images/logo_tagline.svg" alt="VBT Logo">
+          </div>
+        </div>
+      </div>
+{% endblock %}
 
 {%- block script -%}
 <script src='{{static_url("js/login.js", include_version=True) }}'></script>

@@ -269,17 +269,23 @@
 
     {#- FOOTER #}
     {% block footer %}
-	<footer class="custom-footer">
-			<div class="footer-content">
-				<div class="footer-left">
-					<p>© 2025 Virtual Brain Twin</p>
-				</div>
-				<div class="footer-right">
-					<a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/how-to-participate/org-details/896706219/project/101137289/program/43108390/details" target="_blank">
-						<img src="{{ base_url }}static/images/eu_funded_white.png" alt="EU Funded Project">
-					</a>
-				</div>
-			</div>
+	<footer class="navbar mt-auto p-0">
+	    {% block footertop %}
+	    {% endblock %}
+
+          <div id="footer-bottom" class="custom-footer">
+          <div class="footer-content">
+                    <div class="footer-left">
+                        <p>© 2025 Virtual Brain Twin</p>
+                    </div>
+                    <div class="footer-right">
+                        <a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/how-to-participate/org-details/896706219/project/101137289/program/43108390/details" target="_blank">
+                            <img src="{{ base_url }}static/images/eu_funded_white.png" alt="EU Funded Project">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
 
 	</footer>
     {% endblock footer %}
