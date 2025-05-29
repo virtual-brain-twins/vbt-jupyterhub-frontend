@@ -1,0 +1,173 @@
+{%- macro create_user_widget() -%}
+{%- if user %}
+<div class="dropdown">
+  {%- if auth_state %}
+    {%- set display_name = auth_state.get("oauth_user", {}).get("name", user.name) %}
+  {%- else %}
+    {%- set display_name = user.name %}
+  {%- endif %}
+  <button class="btn btn-outline-primary dropdown-toggle mb-2" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside">{{ display_name }}</button>
+  <ul class="dropdown-menu dropdown-menu-end w-100">
+    <li>
+      <button id="logout" class="dropdown-item">
+        <svg class="align-middle" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+          <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+        </svg>
+        <span class="align-middle">Logout</span>
+      </button>
+    </li>
+  </ul>
+</div>
+{%- else %}
+<div class="empty mb-3"></div>
+{%- endif -%}
+{%- endmacro -%}
+
+{%- macro create_navigation(prefix="") -%}
+<ul class="nav">
+  {#- Show different headers depending on if a user is logged in or not -#}
+  
+  {#- If not logged in, we cannot show these links in the user widget, so we put them in the nav bar instead -#}
+  <div class="d-flex">
+    {%- if user %}
+    <li class="nav-item"><a id="{{prefix}}start-nav-item" class="nav-link text-decoration-none" href="{{ base_url }}home">JupyterLab</a></li>
+    {%- if auth_state and "geant:dfn.de:fz-juelich.de:jsc:jupyter:workshop_instructors" in auth_state.get("groups", []) %}
+    <li class="nav-item"><a id="{{prefix}}workshop-manage-nav-item" class="nav-link text-decoration-none" href="{{ base_url }}workshopmanager">Manage Workshops</a></li>
+    {%- endif -%}
+    {%- if user.admin %}
+    <li class="nav-item"><a id="{{prefix}}admin-nav-item" class="nav-link text-decoration-none" href="{{ base_url }}admin">Admin</a></li>
+    {%- endif -%}
+    {%- endif %}
+    <li class="nav-item"><a id="{{prefix}}docs-nav-item" class="nav-link text-decoration-none" target="_blank" href="https://docs.jupyter.jsc.fz-juelich.de">Documentation</a></li>
+  </div>
+</ul>
+{%- endmacro -%}
+
+{%- block header %}
+<nav class="navbar navbar-light navbar-expand-lg bg-white pb-0">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="https://fz-juelich.de/jsc/en" target="_blank">
+      <img id="jsc-logo" class="p-3" width="335px" title="https://fz-juelich.de/jsc/en" alt='JSC' src='{{ static_url("images/header/jsc.png", include_version=True) }}' />
+    </a>
+    {#- Button that toggles the navigation. Is visible on medium screens and smaller. #}
+    <button class="navbar-toggler mb-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapsibleContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    {#- This div is hidden on medium screens and smaller. #}
+    <div class="collapse navbar-collapse align-self-end">
+      {{ create_navigation() }}
+    </div>
+    <div class="d-flex flex-column align-items-end ms-auto">
+      <a class="navbar-brand" href="/">
+        <img id="jupyter-logo" src='{{ static_url("images/header/jupyterjsc.png", include_version=True) }}' height="60px" alt="Jupyter-JSC" title="{{frontendCollection.get('hostname')}}{{ base_url|default('', true) }}">
+      </a>
+      {{ create_user_widget() }}
+    </div>
+  </div>
+  {#- This div is toggled by the navbar toggle button above and appears below the logos. #}
+  <div class="collapse navbar-collapse d-lg-none" style="margin-left: 2rem;" id="navbarCollapsibleContent">
+      {{ create_navigation(prefix="collapse-") }}
+  </div>
+</nav>
+{%- endblock %}
+
+
+{#{% block nav_bar %}#}
+{#      <nav class="navbar navbar-expand-sm bg-body-tertiary mb-4">#}
+{#        <div class="container-fluid">#}
+{#          {% block logo %}#}
+{#            <span id="jupyterhub-logo" class="navbar-brand">#}
+{#              <a href="https://www.virtualbraintwin.eu/" target="_blank">#}
+{#                <img src='{{ base_url }}/static/images/logo_white.svg'#}
+{#                     alt='VBT JupyterHub logo'#}
+{#                     class='jpy-logo'#}
+{#                     title='Virtual Brain Twin' />#}
+{#              </a>#}
+{#            </span>#}
+{#          {% endblock logo %}#}
+{#          {% if user %}#}
+{#            <button class="navbar-toggler"#}
+{#                    type="button"#}
+{#                    data-bs-toggle="collapse"#}
+{#                    data-bs-target="#thenavbar"#}
+{#                    aria-controls="thenavbar"#}
+{#                    aria-expanded="false"#}
+{#                    aria-label="Toggle navigation">#}
+{#              <span class="navbar-toggler-icon"></span>#}
+{#            </button>#}
+{#          {% endif %}#}
+{#          <div class="collapse navbar-collapse" id="thenavbar">#}
+{#            <ul class="navbar-nav me-auto mb-0">#}
+{#              {% if user %}#}
+{#                {% block nav_bar_left_items %}#}
+{#                  <li class="nav-item">#}
+{#                    <a class="nav-link" href="{{ base_url }}home">Home</a>#}
+{#                  </li>#}
+{#                  <li class="nav-item">#}
+{#                    <a class="nav-link" href="{{ base_url }}token">Token</a>#}
+{#                  </li>#}
+{#                  {% if 'admin-ui' in parsed_scopes %}#}
+{#                    <li class="nav-item">#}
+{#                      <a class="nav-link" href="{{ base_url }}admin">Admin</a>#}
+{#                    </li>#}
+{#                  {% endif %}#}
+{#                  {% if services %}#}
+{#                    <li class="nav-item dropdown">#}
+{#                      <a href="#"#}
+{#                         class="nav-link dropdown-toggle"#}
+{#                         data-bs-toggle="dropdown"#}
+{#                         role="button"#}
+{#                         aria-expanded="false">Services</a>#}
+{#                      <ul class="dropdown-menu">#}
+{#                        {% for service in services %}#}
+{#                          {% block service scoped %}#}
+{#                            <li>#}
+{#                              <a class="dropdown-item" href="{{ service.href }}">{{ service.name }}</a>#}
+{#                            </li>#}
+{#                          {% endblock service %}#}
+{#                        {% endfor %}#}
+{#                      </ul>#}
+{#                    </li>#}
+{#                  {% endif %}#}
+{#                {% endblock nav_bar_left_items %}#}
+{#              {% endif %}#}
+{#            </ul>#}
+{#            <ul class="nav navbar-nav me-2">#}
+{#              {% block nav_bar_right_items %}#}
+{#                <!-- <li class="nav-item">#}
+{#                  {% block theme_toggle %}#}
+{#                    <button class="btn btn-sm"#}
+{#                            id="dark-theme-toggle"#}
+{#                            aria-label="Toggle dark mode"#}
+{#                            title="Toggle dark mode">#}
+{#                      <i aria-hidden="true" class="fa fa-circle-half-stroke"></i>#}
+{#                    </button>#}
+{#                  {% endblock theme_toggle %}#}
+{#                </li> -->#}
+{#                <li class="nav-item">#}
+{#                  {% block login_widget %}#}
+{#                    <span id="login_widget">#}
+{#                      {% if user %}#}
+{#                        <span class="me-1">{{ user.name }}</span>#}
+{#                        <a id="logout"#}
+{#                           role="button"#}
+{#                           class="btn btn-sm btn-outline-contrast"#}
+{#                           href="{{ logout_url }}"> <i aria-hidden="true" class="fa fa-sign-out"></i> Logout</a>#}
+{#                      {% else %}#}
+{#                        <a id="login"#}
+{#                           role="button"#}
+{#                           class="btn btn-sm btn-outline-contrast"#}
+{#                           href="{{ login_url }}">Login</a>#}
+{#                      {% endif %}#}
+{#                    </span>#}
+{#                  {% endblock login_widget %}#}
+{#                </li>#}
+{#              {% endblock nav_bar_right_items %}#}
+{#            </ul>#}
+{#          </div>#}
+{#          {% block header %}#}
+{#          {% endblock header %}#}
+{#        </div>#}
+{#      </nav>#}
+{#    {% endblock nav_bar %}#}
