@@ -81,9 +81,9 @@ h1, h2, h3, h4, h5, h6 {
     background-color: rgb(109,131,143) !important;
 }
 
-#login_submit {
-	background-color: rgb(208,71,10) !important;
-	border: none;
+#login {
+    color: white;
+	border: 1px solid white;
 }
 
 .login_error {
@@ -159,16 +159,6 @@ h1, h2, h3, h4, h5, h6 {
 	display: flex;
     align-items: center;
 }
-
-.version_footer {
-    width: 100%;
-    padding: 5px;
-    position: absolute;
-    bottom: 60px;
-    left: 0;
-	font-family: 'Arial Narrow', Arial, sans-serif !important;
-}
-
 
 .footer-content {
     width: 90%;
