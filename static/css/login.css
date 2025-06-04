@@ -1,15 +1,5 @@
 /* Login div */
 
-#title > h1 {
-  font-size: 5em;
-  color: black;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-#lbutton-login-div {
-  border: none;
-}
-
 .list-group.list-with-bullets .list-group-item {
   list-style-type: disc;
   display: list-item;
@@ -63,20 +53,6 @@
 #login-background {
   background-size: cover;
   min-height: 500px;
-}
-
-#jsc-login-container {
-  max-width: 1100px;
-  width: 100%;
-  max-height: 30vh;
-  padding: 2rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background: white;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  border-radius: 0.75rem;
 }
 
 #accounts-login-div {
