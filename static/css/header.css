@@ -1,0 +1,22 @@
+.logo {
+	max-height: 40px;
+}
+
+.jpy-logo {
+	height: 80px !important;
+	width: auto !important;
+}
+
+#login {
+    color: white;
+	border: 1px solid white;
+}
+
+#logout {
+	color: white !important;
+	border: 1px solid white;
+}
+
+#logout:hover {
+    background-color: rgb(109,131,143) !important;
+}

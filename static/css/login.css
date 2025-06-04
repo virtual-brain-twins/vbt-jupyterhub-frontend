@@ -1,0 +1,144 @@
+/* Login div */
+
+#title > h1 {
+  font-size: 5em;
+  color: black;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#lbutton-login-div {
+  border: none;
+}
+
+.list-group.list-with-bullets .list-group-item {
+  list-style-type: disc;
+  display: list-item;
+}
+
+#button-login-div a,
+#button-login-div a:hover {
+  text-decoration: none;
+}
+
+#button-login-div img {
+  border-radius: 50%;
+  border: 0.25vh solid white;
+  margin: .3em !important;
+  height: 50px;
+}
+
+.btn-vbt {
+  background-color: rgb(208, 71, 10);
+  color: white;
+  border: none;
+}
+.btn-vbt:hover {
+  background-color: rgb(153, 50, 7);
+  color: white;
+}
+
+/* Links */
+
+#link-div ul {
+  list-style-type: none;
+}
+
+#link-div li {
+	margin: .3em 0;
+}
+
+#link-div a {
+  display: block;
+  color: #023d6b;
+  padding: 15px 20px 15px 30px;
+  background: url("/hub/static/images/sprite.png") #adbde3 no-repeat 12px -5139px;
+  /* background-color: #adbde3; */
+}
+
+#link-div a:hover {
+  color: #333333;
+  background-color: #fff;
+}
+
+#login-background {
+  background-size: cover;
+  min-height: 500px;
+}
+
+#jsc-login-container {
+  max-width: 1100px;
+  width: 100%;
+  max-height: 30vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 0.75rem;
+}
+
+#accounts-login-div {
+	max-width: 100%;
+
+}
+
+main #login-background .container {
+  max-width: 960px;
+}
+
+main #login-background .container-sm {
+  max-width: 960px;
+}
+
+main #login-background .container-md {
+  max-width: 960px;
+}
+
+main #login-background .container-lg {
+  max-width: 960px;
+}
+
+main #login-background .container-xl {
+  max-width: 960px;
+}
+
+.white-band {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.white-band-content {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: center;
+}
+
+.white-band-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: white !important;
+  font-weight: bold !important;
+}
+
+.white-band-left p {
+  background: rgba(153, 70, 28);
+  padding: 3px 5px;
+  margin: 0 0 5px 0;
+}
+
+.white-band-right img {
+  height: auto;
+  max-height: 140px;
+  width: auto;
+  max-width: 100%;
+}

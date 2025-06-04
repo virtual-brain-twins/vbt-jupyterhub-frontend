@@ -24,158 +24,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-link {
     color: white !important; /* Default text color */
+    background-color: rgb(109,131,143);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav-link:hover {
-    background-color: rgb(109,131,143) !important;
+    color: white !important; /* Default text color */
+    background-color: rgb(67,87,97) !important;
 }
 
-.jpy-logo {
-	height: 80px !important;
-	width: auto !important;
-}
-
-/* Login */
-.list-group.list-with-bullets .list-group-item {
-  list-style-type: disc;
-  display: list-item;
-}
-
-.login-content-wrapper {
-  min-height: 60vh;
-  width: 100%;
-  padding: 2rem 1rem;
-}
-
-#jsc-login-container {
-  max-width: 1100px;
-  width: 100%;
-  max-height: 30vh;
-  padding: 2rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background: white;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  border-radius: 0.75rem;
-}
-}
-
-#accounts-login-div {
-	max-width: 100%;
-	
-}
-
-.logo {
-	max-height: 40px;
-}
-
-#logout {
-	color: white !important;
-	border: 1px solid white;
-}
-
-#logout:hover {
-    background-color: rgb(109,131,143) !important;
-}
-
-#login {
-    color: white;
-	border: 1px solid white;
-}
-
-.login_error {
-	background: rgba(234, 67, 34);
-	max-width: max-content;
-	color: white !important;
-	text-align: center;
-	padding: 5px 15px;
-}
-
-#button-login-div a,
-#button-login-div a:hover {
-  text-decoration: none;
-}
-
-.btn-vbt {
-  background-color: rgb(208, 71, 10);
-  color: white;
-  border: none;
-}
-.btn-vbt:hover {
-  background-color: rgb(153, 50, 7);
-  color: white;
-}
-
-.white-band {
-  width: 100%;
-  background: rgba(255, 255, 255, 0.3);
-  padding: 2rem 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.white-band-content {
-  width: 100%;
-  max-width: 1200px;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 2rem;
-  align-items: center;
-}
-
-.white-band-left {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  color: white !important;
-  font-weight: bold !important;
-}
-
-.white-band-left p {
-  background: rgba(153, 70, 28);
-  padding: 3px 5px;
-  margin: 0 0 5px 0;
-}
-
-.white-band-right img {
-  height: auto;
-  max-height: 140px;
-  width: auto;
-  max-width: 100%;
-}
-
-.custom-footer {
-	background-color: rgb(67,87,97) !important;
-    color: white !important;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    padding: 10px 0;
-	display: flex;
-    align-items: center;
-}
-
-.footer-content {
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-}
-
-.footer-left p {
-    color: white;
-    font-weight: bold;
-    display: inline-block;
-	margin-bottom: 0;
-}
-
-.footer-right img {
-    height: 40px;
-    width: auto;
+.nav-link.active {
+    color: white !important; /* Default text color */
+    background-color: rgb(67,87,97) !important;
 }

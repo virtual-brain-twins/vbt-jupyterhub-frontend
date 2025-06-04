@@ -1,33 +1,3 @@
-{% macro modal(title, btn_label=None, btn_class="btn-primary") %}
-  {% set key = title.replace(' ', '-').lower() %}
-  {% set btn_label = btn_label or title %}
-  <div class="modal fade"
-       id="{{ key }}-dialog"
-       tabindex="-1"
-       role="dialog"
-       aria-labelledby="{{ key }}-label"
-       aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title" id="{{ key }}-label">{{ title }}</h2>
-          <button type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"></button>
-        </div>
-        <div class="modal-body">{{ caller() }}</div>
-        <div class="modal-footer">
-          <button type="button"
-                  class="btn {{ btn_class }}"
-                  data-bs-dismiss="modal"
-                  data-dismiss="modal">{{ btn_label }}</button>
-        </div>
-      </div>
-    </div>
-  </div>
-{% endmacro %}
-
 <!DOCTYPE HTML>
 <html>
 
@@ -158,12 +128,6 @@
 
     {#- HEADER -#}
     {% include "header.html" %}
-
-    {% block announcement %}
-      {% if announcement %}
-        <div class="container text-center announcement alert alert-warning">{{ announcement | safe }}</div>
-      {% endif %}
-    {% endblock announcement %}
 
     {#- MAIN #}
     <main>
