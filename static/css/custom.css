@@ -1,27 +1,3 @@
-html, body {
-  height: 100%;
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-    background-color: rgb(199, 216, 226) !important;
-	font-family: 'Arial Narrow', Arial, sans-serif !important;
-	padding-bottom: 60px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Arial Narrow', Arial, sans-serif !important;
-}
-
-.navbar {
-    background-color: rgb(67,87,97) !important;
-    border: none;
-	font-family: 'Arial Narrow', Arial, sans-serif !important;
-	color: white !important;
-}
-
 .nav-link {
     color: white !important; /* Default text color */
     background-color: rgb(109,131,143);
