@@ -13,7 +13,7 @@
 #button-login-div img {
   border-radius: 50%;
   border: 0.25vh solid white;
-  margin: .3em !important;
+  margin: .3em;
   height: 50px;
 }
 
@@ -25,29 +25,6 @@
 .btn-vbt:hover {
   background-color: rgb(153, 50, 7);
   color: white;
-}
-
-/* Links */
-
-#link-div ul {
-  list-style-type: none;
-}
-
-#link-div li {
-	margin: .3em 0;
-}
-
-#link-div a {
-  display: block;
-  color: #023d6b;
-  padding: 15px 20px 15px 30px;
-  background: url("/hub/static/images/sprite.png") #adbde3 no-repeat 12px -5139px;
-  /* background-color: #adbde3; */
-}
-
-#link-div a:hover {
-  color: #333333;
-  background-color: #fff;
 }
 
 #login-background {
@@ -102,8 +79,8 @@ main #login-background .container-xl {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  color: white !important;
-  font-weight: bold !important;
+  color: white;
+  font-weight: bold;
 }
 
 .white-band-left p {
