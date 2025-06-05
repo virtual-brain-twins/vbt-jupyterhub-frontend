@@ -7,6 +7,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Arial Narrow', Arial, sans-serif;
+    color: rgb(67,87,97);
 }
 
 main {
@@ -74,8 +75,8 @@ a.nav-link:hover {
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active {
-  background-color: #225f8d;
-  border-color: #225f8d;
+  background-color: rgb(109,131,143);
+  border-color: rgb(109,131,143);
 }
 
 .btn-outline-primary {

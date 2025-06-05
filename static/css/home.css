@@ -1,3 +1,17 @@
+.table-responsive-md p {
+  color: rgb(67,87,97);
+}
+
+.btn-success {
+  background-color: rgb(67,87,97) !important;
+  border: 1px solid rgb(67,87,97) !important;
+}
+
+.btn-danger {
+  background-color: rgb(208,71,10) !important;
+  border: 1px solid rgb(208,71,10) !important;
+}
+
 tr.summary-tr {
   height: 73px;
   cursor: pointer;
@@ -62,29 +76,49 @@ Vertical tabs
   display: flex;
   justify-content: space-between;
   text-align: start;
-  color: #023d6b;
-  border: 1px solid #023d6b !important;
+  color: rgb(153,70,28);
+  border: 1.5px solid rgb(153,70,28) !important;
+}
+
+.nav-pills button:hover {
+  color: rgb(208,71,10);
 }
 
 .nav-pills button.active {
-  background-color: #023d6b !important;
+  background-color: rgb(153,70,28) !important;
 }
 
 .nav-pills svg {
   margin: auto 0;
 }
 
+/* Kernels and Extensions checkboxes */
+.form-check-input:checked{
+  background-color: rgb(67,87,97) !important;
+  border: 0;
+}
+
+.form-check-input:focus, .form-check-input::after, .form-check-input:not(:disabled):not(.disabled):active:focus{
+  color: black;
+  outline: 0;
+  border: 0;
+  box-shadow: 0 0 0 0.25rem rgb(67,87,97) !important;
+}
+
+.form-check-label span {
+  color: rgb(67,87,97);
+}
 
 /* Module select all or none */
 .form-check-input.module-selector:checked{
-  background-color: var(--bs-success) !important;
+  background-color: rgb(153,70,28) !important;
   border: 0;
 }
 .form-check-input.module-selector:focus, .form-check-input.module-selector::after, .form-check-input.module-selector:not(:disabled):not(.disabled):active:focus {
   color: black;
   outline: 0;
   border: 0;
-  box-shadow: 0 0 0 0.25rem rgb(25, 135, 84, 0.25) !important;
+  box-shadow: 0 0 0 0.25rem rgb(153,70,28) !important;
 }
 
 
