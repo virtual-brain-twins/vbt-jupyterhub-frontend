@@ -62,12 +62,12 @@ Vertical tabs
   display: flex;
   justify-content: space-between;
   text-align: start;
-  color: rgb(153,70,28);
-  border: 1px solid rgb(153,70,28) !important;
+  color: #023d6b;
+  border: 1px solid #023d6b !important;
 }
 
 .nav-pills button.active {
-  background-color: rgb(153,70,28) !important;
+  background-color: #023d6b !important;
 }
 
 .nav-pills svg {
