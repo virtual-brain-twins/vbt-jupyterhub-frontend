@@ -56,18 +56,11 @@ a:hover {
 }
 
 a.nav-link {
-  background-color: rgb(199,216,226);
-  color: rgb(67,87,97);
+  color: rgb(199,216,226);
 }
 
 a.nav-link:hover {
-  background-color: rgb(109,131,143);
-  color: white;
-}
-
-a.nav-link.active {
-    background-color: rgb(67,87,97);
-    color: white;
+  color: rgb(109,131,143);
 }
 
 
