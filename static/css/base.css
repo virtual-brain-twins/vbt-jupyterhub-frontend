@@ -67,15 +67,15 @@ a.nav-link:hover {
 /* Buttons */
 
 .btn-primary {
-  background-color: rgb(67,87,97);
-  border-color: rgb(67,87,97);
+  background-color: rgb(229,149,26);
+  border-color: rgb(229,149,26);
 }
 
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active {
-  background-color: #225f8d;
-  border-color: #225f8d;
+  background-color: rgb(153,70,28);
+  border-color: rgb(153,70,28);
 }
 
 .btn-outline-primary {
