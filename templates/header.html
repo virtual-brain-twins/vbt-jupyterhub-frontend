@@ -20,9 +20,6 @@
                                 <span class="me-1">{{ user.name }}</span>
                                 <a id="logout" role="button" class="btn btn-sm btn-outline-contrast"
                                    href="{{ logout_url }}"> <i aria-hidden="true" class="fa fa-sign-out"></i> Logout</a>
-                            {% else %}
-                                <a id="login" role="button" class="btn btn-sm btn-outline-contrast"
-                                   href="{{ login_url }}">Login</a>
                             {% endif %}
                             </span>
                         {% endblock login_widget %}
