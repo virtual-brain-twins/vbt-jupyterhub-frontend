@@ -92,3 +92,49 @@ In this environment, you will have access to the **VBT Kernel**:
 
 ![JLab](docs/jlab.png)
 
+---
+
+## Experts
+
+### Kernel Creation
+  Follow instructions from ['Create your own Jupyter Kernel'](https://gitlab.jsc.fz-juelich.de/jupyter4jsc/training-2024.04-jupyter4hpc/-/blob/main/day1_introduction/5_create-kernels/2-create_JupyterKernel_general.ipynb?ref_type=heads) guide.
+
+
+### Loaded Modules for **VBT Kernel (v1.0)**
+
+- Stages/2024, GCC, Python, Intel,  ParaStationMPI, GSL, mpi4py, CMake, Boost, jemalloc, Autotools
+
+
+### Extension Installation
+
+For the installation of extensions (tvb-ext-unicore, tvb-ext-xircuits) we used EasyBuild files.
+  
+1. Prepare your EasyBuild environment
+
+  Create an EasyBuild file (e.g. [jupyter-slurm-provisioner-0.6.0-GCCcore-12.3.0.eb](https://github.com/easybuilders/JSC/blob/2024/Golden_Repo/j/jupyter-slurm-provisioner/jupyter-slurm-provisioner-0.6.0-GCCcore-12.3.0.eb)) in the `$HOME/.jupyter` directory and load the necessary modules and environment variables:
+
+  ```
+  module purge
+  module load Stages/2024
+  module load GCCcore/.12.3.0
+  vim ~/.jupyter/tvb-ext-unicore-3.0.0-GCCcore-12.3.0.eb   # create/update file with library details
+  export USERINSTALLATIONS=$PROJECT_vbt   # for shared installation; use $HOME for personal testing
+  ```
+   
+2. Build and install the extension
+
+  Switch to the user installations module and build the extension:
+
+  ```
+  module purge
+  module load Stages/2024
+  module load UserInstallations
+  eb ~/.jupyter/tvb-ext-unicore-3.0.0-GCCcore-12.3.0.eb
+  ```
+
+3. Finalize and load the installed extension
+
+  ```
+  module load GCCcore/.12.3.0
+  module load tvb-ext-unicore/3.0.0
+  ```
