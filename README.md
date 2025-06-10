@@ -97,7 +97,7 @@ In this environment, you will have access to the **VBT Kernel**:
 ## Experts
 
 ### Kernel Creation
-  Follow instructions from ['Create your own Jupyter Kernel'](https://gitlab.jsc.fz-juelich.de/jupyter4jsc/training-2024.04-jupyter4hpc/-/blob/main/day1_introduction/5_create-kernels/2-create_JupyterKernel_general.ipynb?ref_type=heads) guide.
+  To create a personalized kernel you can follow instructions from ['Create your own Jupyter Kernel'](https://gitlab.jsc.fz-juelich.de/jupyter4jsc/training-2024.04-jupyter4hpc/-/blob/main/day1_introduction/5_create-kernels/2-create_JupyterKernel_general.ipynb?ref_type=heads) guide.
 
 
 ### Loaded Modules for **VBT Kernel (v1.0)**
@@ -107,7 +107,7 @@ In this environment, you will have access to the **VBT Kernel**:
 
 ### Extension Installation
 
-For the installation of extensions (tvb-ext-unicore, tvb-ext-xircuits) we used EasyBuild files.
+For installation of different extensions (e.g.tvb-ext-unicore, tvb-ext-xircuits) into jupyterlab, you can use EasyBuild files:
   
 1. Prepare your EasyBuild environment
 
