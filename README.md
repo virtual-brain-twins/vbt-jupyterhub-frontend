@@ -102,9 +102,28 @@ To make TVB extensions (tvb-ext-unicore, tvb-ext-xircuits) available in your Jup
 - Location: `$HOME/.jupyter`
 - Name: `start_jupyter-jsc.sh`
 
-Within this script, load the required modules for TVB extensions. Below is an example illustrating how to configure the script to load the appropriate modules:
+This script should load the necessary modules required for the TVB extensions. Below is a code snippet demonstrating how to configure it:
 
-![Custom Start Script](docs/start_script.png)
+```
+#!/bin/bash
+export USERINSTALLATIONS=/p/project1/vbt
+
+# load JupyterLab
+module purge
+module load Stages/2024
+module load GCCcore/.12.3.0
+module load Jupyter-bundle
+
+# make extra extensions findable
+module load tvb-ext-unicore/3.1.1
+module load tvb-ext-xircuits/2.0.1
+
+for path in ${JUPYTER_EXTRA_LABEXTENSIONS_PATH//:/ }; do
+
+    echo "c.LabServerApp.extra_labextensions_path.append('$path')" >> ${JUPYTER_LOG_DIR}/.config.py
+
+done
+```
 
 After the custom script is in place, a new JupyterLab session must be started for the changes to take effect. During startup, the log files should include a message confirming the customized modules were loaded:
 
