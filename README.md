@@ -94,47 +94,18 @@ In this environment, you will have access to the **VBT Kernel**:
 
 ---
 
-## Experts
+## Use TVB extensions 
 
-### Kernel Creation
-  To create a personalized kernel you can follow instructions from ['Create your own Jupyter Kernel'](https://gitlab.jsc.fz-juelich.de/jupyter4jsc/training-2024.04-jupyter4hpc/-/blob/main/day1_introduction/5_create-kernels/2-create_JupyterKernel_general.ipynb?ref_type=heads) guide.
+To make TVB extensions (tvb-ext-unicore, tvb-ext-xircuits) available in your JupyterLab environment, you need to create a **custom start script**. 
 
+### Script Requirements
+- Location: `$HOME/.jupyter`
+- Name: `start_jupyter-jsc.sh`
 
-### Loaded Modules for **VBT Kernel (v1.0)**
+Within this script, load the required modules for TVB extensions. Below is an example illustrating how to configure the script to load the appropriate modules:
 
-- Stages/2024, GCC, Python, Intel,  ParaStationMPI, GSL, mpi4py, CMake, Boost, jemalloc, Autotools
+![Custom Start Script](docs/start_script.png)
 
+After the custom script is in place, a new JupyterLab session must be started for the changes to take effect. During startup, the log files should include a message confirming the customized modules were loaded:
 
-### Extension Installation
-
-For installation of different extensions (e.g.tvb-ext-unicore, tvb-ext-xircuits) into jupyterlab, you can use EasyBuild files:
-  
-1. Prepare your EasyBuild environment
-
-  Create an EasyBuild file (e.g. [jupyter-slurm-provisioner-0.6.0-GCCcore-12.3.0.eb](https://github.com/easybuilders/JSC/blob/2024/Golden_Repo/j/jupyter-slurm-provisioner/jupyter-slurm-provisioner-0.6.0-GCCcore-12.3.0.eb)) in the `$HOME/.jupyter` directory and load the necessary modules and environment variables:
-
-  ```
-  module purge
-  module load Stages/2024
-  module load GCCcore/.12.3.0
-  vim ~/.jupyter/tvb-ext-unicore-3.0.0-GCCcore-12.3.0.eb   # create/update file with library details
-  export USERINSTALLATIONS=$PROJECT_vbt   # for shared installation; use $HOME for personal testing
-  ```
-   
-2. Build and install the extension
-
-  Switch to the user installations module and build the extension:
-
-  ```
-  module purge
-  module load Stages/2024
-  module load UserInstallations
-  eb ~/.jupyter/tvb-ext-unicore-3.0.0-GCCcore-12.3.0.eb
-  ```
-
-3. Finalize and load the installed extension
-
-  ```
-  module load GCCcore/.12.3.0
-  module load tvb-ext-unicore/3.0.0
-  ```
+![Jupyterlab Logs](docs/jupyterlab_logs.png)
