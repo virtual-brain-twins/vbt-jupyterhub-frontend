@@ -92,3 +92,20 @@ In this environment, you will have access to the **VBT Kernel**:
 
 ![JLab](docs/jlab.png)
 
+---
+
+## Use TVB extensions 
+
+To make TVB extensions (tvb-ext-unicore, tvb-ext-xircuits) available in your JupyterLab environment, you need to create a **custom start script**. 
+
+### Script Requirements
+- Location: `$HOME/.jupyter`
+- Name: `start_jupyter-jsc.sh`
+
+Within this script, load the required modules for TVB extensions. Below is an example illustrating how to configure the script to load the appropriate modules:
+
+![Custom Start Script](docs/start_script.png)
+
+After the custom script is in place, a new JupyterLab session must be started for the changes to take effect. During startup, the log files should include a message confirming the customized modules were loaded:
+
+![Jupyterlab Logs](docs/jupyterlab_logs.png)
