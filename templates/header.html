@@ -17,7 +17,18 @@
                         {% block login_widget %}
                             <span id="login_widget">
                             {% if user %}
-                                <span class="me-1">{{ user.name }}</span>
+                                      {%- set ns = namespace(display_name=user.name) %}
+                                      {%- if auth_state %}
+                                        {%- set ns.display_name = auth_state.get("oauth_user", auth_state).get("name", user.name) %}
+                                      {%- else %}
+                                        {%- for group in user.orm_user.groups %}
+                                          {%- if group.name and group.name.startswith("displayname:") %}
+                                            {%- set ns.display_name = group.name[12:] %}
+                                            {%- break %}
+                                          {%- endif %}
+                                        {%- endfor %}
+                                      {%- endif %}
+                                <span class="me-1">{{ ns.display_name }}</span>
                                 <a id="logout" role="button" class="btn btn-sm btn-outline-contrast"
                                    href="{{ logout_url }}"> <i aria-hidden="true" class="fa fa-sign-out"></i> Logout</a>
                             {% endif %}

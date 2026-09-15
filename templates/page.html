@@ -118,7 +118,7 @@
   </script>
 </head>
 
-<body>
+<body onresize="sseInit()">
   <noscript>
     <div id='noscript'>
       JupyterHub requires JavaScript.<br>
@@ -127,7 +127,6 @@
   </noscript>
 
   <div class="d-flex flex-column h-100">
-
     {#- HEADER -#}
     {% include "header.html" %}
 
